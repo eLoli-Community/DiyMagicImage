@@ -156,7 +156,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/GD/app/Models" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/GD/app/boot" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
@@ -166,11 +166,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="Z:\DiyMagicImage\app\GD\app\boot" />
       <recent name="Z:\DiyMagicImage\app\GD\app\Models" />
       <recent name="Z:\DiyMagicImage\app\Actions" />
       <recent name="Z:\DiyMagicImage\app\Contracts" />
       <recent name="Z:\DiyMagicImage\resources" />
-      <recent name="Z:\DiyMagicImage\resources\views\magic-images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="Z:\DiyMagicImage\app\GD\app\Models" />
@@ -202,7 +202,7 @@
       <workItem from="1609093847258" duration="1642000" />
       <workItem from="1609164278439" duration="1264000" />
       <workItem from="1609165980861" duration="29725000" />
-      <workItem from="1609305185251" duration="33148000" />
+      <workItem from="1609305185251" duration="39037000" />
     </task>
     <servers />
   </component>

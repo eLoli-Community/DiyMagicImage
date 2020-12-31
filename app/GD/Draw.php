@@ -26,6 +26,7 @@ class Draw implements ShowMagicImage
             $loader= new ModuleLoader();
             $js->setModuleLoader([$loader,'load']);
             foreach(Base::scanDir(Base::app('boot')) as $file){
+                info($file);
                 $js->executeString(Base::readFile($file));
             }
             ob_start();
