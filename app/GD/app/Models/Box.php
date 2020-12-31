@@ -13,7 +13,7 @@ class Box
      * @param Point|null $from
      * @param Vector|null $way
      */
-    public function __construct($from=null, $way=null)
+    public function __construct(Point $from=null, Vector $way=null)
     {
         $this->from = $from?:new Point();
         $this->way = $way?:new Vector();

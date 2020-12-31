@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 
 class MagicImageController extends Controller
 {
+
     public function index()
     {
         return view('magic-images.list')->with('magic_images',Auth::user()->currentTeam->magic_images()->paginate());
@@ -23,7 +24,7 @@ class MagicImageController extends Controller
     {
         $magicImage = MagicImage::findOrFail($id);
         $image=$shower->make($magicImage->script,$request->all());
-        if($request->acceptsHtml()){
+        if(in_array('text/html',$request->getAcceptableContentTypes())){
             return view('magic-images.show')
                 ->with('magicImage',$magicImage)
                 ->with('imageUrl','data:image/png;base64,'.base64_encode($image))

@@ -54,11 +54,7 @@ class Image
         return self::fromString(Base::readFile(Base::res($file,'image')));
     }
 
-    /**
-     * @param Color $color
-     * @return false|int
-     */
-    private function getColor($color){
+    private function getColor(Color $color){
         return imagecolorallocatealpha($this->gd, $color->red, $color->green, $color->blue, $color->alpha);
     }
 
@@ -83,18 +79,11 @@ class Image
         return $this->getAsString();
     }
 
-    /**
-     * @param Point $s
-     * @param Color $color
-     */
-    public function fill($s,$color){
+    public function fill(Point $s,Color $color){
         imagefill($this->gd, $s->x, $s->y,$this->getColor($color));
     }
 
-    /**
-     * @param Vector $new_size
-     */
-    public function resize($new_size){
+    public function resize(Vector $new_size){
         $image=Image::create($new_size);
         $image->drawImage(
             $this,
@@ -169,15 +158,7 @@ class Image
         return true;
     }
 
-    /**
-     * @param $text
-     * @param Point $point
-     * @param $size
-     * @param Font $font
-     * @param Color $color
-     * @param $angle
-     */
-    public function drawText($text, $point, $size, $font, $color, $angle){
+    public function drawText($text, Point $point, $size, Font $font, Color $color, $angle){
         $lines = explode("\n", $text);
         $x = $point->x;
         $y = $point->y;
