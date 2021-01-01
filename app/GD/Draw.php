@@ -45,11 +45,11 @@ class Draw implements ShowMagicImage
             ob_end_clean();
             debugbar()->stopMeasure('JsExecute');
             debugbar()->stopMeasure('JsEval');
-        }catch (\V8JsScriptException $e){
+            return $dmi->main->getAsString();
+        }catch (\Throwable $e){
             debug('Js Exception: ',$e);
             debugbar()->addThrowable($e);
         }
-        return $dmi->main->getAsString();
     }
 
     public function getOutputString()

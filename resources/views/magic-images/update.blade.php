@@ -7,9 +7,11 @@
 
     <div>
         <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
-            @livewire('magic-images.update-magic-image-form', ['magicImage' => $magicImage])
+            <div class="md:grid md:grid-cols-3 md:gap-6">
+                @livewire('magic-images.update-magic-image-form', ['magicImage' => $magicImage])
+                @include('magic-images.update-magic-image-editor', ['magicImage' => $magicImage])
+            </div>
             <x-jet-section-border />
-
             <div class="mt-10 sm:mt-0">
                 @livewire('magic-images.delete-magic-image-form', ['magicImage' => $magicImage])
             </div>

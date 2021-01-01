@@ -12,16 +12,12 @@ class UpdateMagicImage implements UpdatesMagicImages
     {
         Gate::forUser($user)->authorize('update',$magicImage->team);
 
-        Validator::make($input, [
-            'name' => ['required', 'string', 'max:255'],
-            'script' => ['required','string'],
+        $input=Validator::make($input, [
+            'name' => ['string', 'max:255'],
+            'script' => ['string'],
             'configure' => ['string'],
         ])->validateWithBag('UpdateMagicImage');
 
-        $magicImage->forceFill([
-            'name' => $input['name'],
-            'script' => $input['script'],
-            'configure' => $input['configure']
-        ])->save();
+        $magicImage->forceFill($input)->save();
     }
 }

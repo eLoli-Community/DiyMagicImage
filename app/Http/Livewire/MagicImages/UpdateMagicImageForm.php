@@ -11,7 +11,6 @@ use Livewire\Component;
 
 class UpdateMagicImageForm extends Component
 {
-    public $state=[];
     public $magicImage;
     public $imageUrl;
     public $imageOutput;
@@ -19,31 +18,26 @@ class UpdateMagicImageForm extends Component
     public function mount($magicImage)
     {
         $this->magicImage = $magicImage;
-        $this->state = [
-            'name' => $magicImage->name,
-            'script' => $magicImage->script,
-            'configure' =>  $magicImage->configure
-        ];
-        $this->debugMagicImage();
+        $this->debugMagicImage($magicImage->script);
     }
-    private function debugMagicImage(){
+    public function debugMagicImage($script){
         $shower=(new Draw());
         $this->imageUrl='data:image/png;base64,'.base64_encode(
-                $shower->make($this->magicImage->script,Request::all())
+                $shower->make($script,Request::all())
             );
         $this->imageOutput=$shower->getOutputString();
-    }
-
-    public function updateMagicImage(UpdatesMagicImages $updater){
-        $this->resetErrorBag();
-
-        $updater->update(Auth::user(),$this->magicImage,$this->state);
-        $this->debugMagicImage();
-
         $debug=debugbar()->getJavascriptRenderer()->render(false);
         $debug=substr($debug,31,strlen($debug)-41);
-        $debug='phpdebugbar.restore();'.$debug;
-        $this->emit('saved',$debug);
+        $debug=''.$debug;
+        $this->emit('debug',$debug);
+    }
+
+    public function updateMagicImageScript($script,UpdatesMagicImages $updater){
+        $this->resetErrorBag();
+        $updater->update(Auth::user(),$this->magicImage,['script'=>$script]);
+        $this->debugMagicImage($script);
+
+        $this->emit('saved');
 
     }
     public function render()
