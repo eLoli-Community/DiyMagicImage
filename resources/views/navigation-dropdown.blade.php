@@ -191,6 +191,19 @@
                     @endif
                 </div>
             </div>
+        @else
+            <div class="pt-2 pb-3 space-y-1">
+                <x-jet-responsive-nav-link href="{{ route('login') }}" :active="request()->routeIs('dashboard')">
+                    {{ __('Login') }}
+                </x-jet-responsive-nav-link>
+            </div>
+            @if (Route::has('register'))
+                <div class="pt-2 pb-3 space-y-1">
+                    <x-jet-responsive-nav-link href="{{ route('register') }}" :active="request()->routeIs('dashboard')">
+                        {{ __('Register') }}
+                    </x-jet-responsive-nav-link>
+                </div>
+            @endif
         @endauth
     </div>
 </nav>

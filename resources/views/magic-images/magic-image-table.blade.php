@@ -1,56 +1,27 @@
 <div class="flex flex-col">
     <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
         <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
-            <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
-                <table class="min-w-full divide-y divide-gray-200">
-                    <thead class="bg-gray-50">
-                    <tr>
-                        <th scope="col"
-                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                            {{ __('Id') }}
-                        </th>
-                        <th scope="col"
-                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                            {{ __('Name') }}
-                        </th>
-                        <th scope="col"
-                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                            {{ __('Create At') }}
-                        </th>
-                        <th scope="col"
-                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                            {{ __('Update At') }}
-                        </th>
-                        <th scope="col" class="relative px-6 py-3">
-                            <span class="sr-only">Edit</span>
-                        </th>
-                    </tr>
-                    </thead>
-                    <tbody class="bg-white divide-y divide-gray-200">
-                    @foreach($magic_images as $magic_image)
-                        <tr>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <div class="text-sm text-gray-900">
-                                    {{ $magic_image->id }}
+            <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg align-middle">
+                @foreach($magic_images as $magic_image)
+                    <div class="sm:inline-flex
+                        m-2 bg-white shadow-lg rounded-lg overflow-hidden">
+                        <div class="sm:flex sm:items-center px-6 py-4">
+                            <img class="block mx-auto rounded"
+                                 style="max-width: 10rem;"
+                                 src="{{ route('magic-images.show',['id'=>$magic_image->id]) }}" alt="">
+                            <div class="mt-4 sm:mt-0 sm:ml-4 text-center sm:text-left">
+                                <p class="text-xl leading-tight">{{ $magic_image->name }}</p>
+                                <p class="text-sm leading-tight text-gray-600">Created at {{ $magic_image->created_at }}</p>
+                                <p class="text-sm leading-tight text-gray-600">Updated at {{ $magic_image->updated_at }}</p>
+                                <div class="mt-4">
+                                    <button class="text-purple-500 hover:text-white hover:bg-purple-500 border
+                                        border-purple-500 text-xs font-semibold rounded-full px-4 py-1
+                                        leading-normal min-w-full sm:min-w-0" onclick="window.location.href='{{ route('magic-images.update',['id'=>$magic_image->id]) }}';">Edit</button>
                                 </div>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <div class="text-sm text-gray-900">{{ $magic_image->name }}</div>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <div class="text-sm text-gray-900">{{ $magic_image->created_at }}</div>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <div class="text-sm text-gray-900">{{ $magic_image->updated_at }}</div>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                <a href="{{ route('magic-images.update',['id'=>$magic_image->id]) }}"
-                                   class="text-indigo-600 hover:text-indigo-900">Edit</a>
-                            </td>
-                        </tr>
-                    @endforeach
-                    </tbody>
-                </table>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
             </div>
         </div>
     </div>

@@ -22,6 +22,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/vendor/laravel/jetstream/resources/views/components/action-section.blade.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/vendor/laravel/jetstream/resources/views/components/button.blade.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/pragmarx/google2fa" />
@@ -164,6 +168,9 @@
     <property name="settings.editor.splitter.proportion" value="0.28105906" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
+  <component name="ReaderModeSettings">
+    <option name="enabled" value="false" />
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="Z:\DiyMagicImage\app\GD\app\boot" />
@@ -202,7 +209,7 @@
       <workItem from="1609093847258" duration="1642000" />
       <workItem from="1609164278439" duration="1264000" />
       <workItem from="1609165980861" duration="29725000" />
-      <workItem from="1609305185251" duration="47420000" />
+      <workItem from="1609305185251" duration="66973000" />
     </task>
     <servers />
   </component>

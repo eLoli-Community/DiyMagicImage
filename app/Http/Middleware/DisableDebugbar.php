@@ -17,7 +17,7 @@ class DisableDebugbar
     public function handle(Request $request, Closure $next)
     {
         if(!in_array($request->route()->getName(),[
-            'magic-images.show'
+            'magic-images.update'
         ]) && !env('DEBUGBAR_ENABLED',false)){
             debugbar()->disable();
         }

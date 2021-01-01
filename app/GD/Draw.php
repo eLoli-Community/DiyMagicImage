@@ -18,8 +18,6 @@ class Draw implements ShowMagicImage
         $this->script=$script;
         $dmi=new DMI();
         $dmi->input=$this->input;
-        debugbar()->enable();
-        debugbar()->boot();
         //\V8Js::registerExtension();
         try {
             debugbar()->startMeasure('JsEval');
